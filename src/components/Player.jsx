@@ -1,6 +1,6 @@
 import { useState, useRef } from 'react';
 
-// Komponent przechowujący nazwę gracza
+// Komponent przechowujący nazwę gracza.
 export default function Player() {
 	const playerName = useRef();
 
@@ -8,6 +8,7 @@ export default function Player() {
 
 	function handleClick() {
 		setEnteredPlayerName(playerName.current.value);
+		playerName.current.value = ''; // Czyszczenie pola <input> przez zastąpienie bieżącej nazwy użytkownika pustym stringiem przy ponownym naciśnięciu przycisku 'Set Name'.
 	}
 
 	return (
